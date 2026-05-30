@@ -13,7 +13,12 @@ from app.routes import emergency_alert
 from app.routes import ai
 from app.routes import ws_alerts   # 🔥 WebSocket routes
 
-app = FastAPI(title="AI Emergency Guardian API")
+from fastapi import FastAPI
+
+app = FastAPI(
+    title="AI Emergency Guardian API",
+    version="0.1.0"
+)
 
 # 🔥 CORS FIX (THIS IS WHAT YOU ARE MISSING)
 app.add_middleware(
@@ -25,7 +30,10 @@ app.add_middleware(
 )
 
 # Create tables
-Base.metadata.create_all(bind=engine)
+import os
+
+if os.getenv("RENDER") != "true":
+    Base.metadata.create_all(bind=engine)
 
 # REST ROUTES
 app.include_router(auth.router)
