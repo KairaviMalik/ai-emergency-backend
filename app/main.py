@@ -17,7 +17,10 @@ from fastapi import FastAPI
 
 app = FastAPI(
     title="AI Emergency Guardian API",
-    version="0.1.0"
+    version="0.1.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json"
 )
 
 # 🔥 CORS FIX (THIS IS WHAT YOU ARE MISSING)
