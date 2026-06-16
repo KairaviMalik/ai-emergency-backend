@@ -33,7 +33,7 @@ def trigger_alert(
         print("===== ALERT RECEIVED =====")
         print(alert)
 
-        user_id = 2
+        user_id = 1
 
         # Save alert
         new_alert = EmergencyAlert(
