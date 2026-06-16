@@ -23,7 +23,7 @@ def add_contact(contact: EmergencyContactCreate,
                 db: Session = Depends(get_db)):
 
     new_contact = EmergencyContact(
-    user_id=2,
+    user_id=1,
     name=contact.name,
     email=contact.email,
     phone=contact.phone,
