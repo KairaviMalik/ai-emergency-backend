@@ -1,10 +1,10 @@
-from pydantic import BaseModel
-from app.models import emergency_contact
+from pydantic import BaseModel, EmailStr
 
 class EmergencyContactCreate(BaseModel):
     name: str
     phone: str
     relationship: str
+    email: EmailStr
 
 
 class EmergencyContactResponse(BaseModel):
